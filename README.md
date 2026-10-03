@@ -1,8 +1,6 @@
 # AsuraAPI
 I discovered the official asurascans API that the website uses this is my attempt at documenting the API's endpoints.
 
-I discovered the official asurascans API that the website uses this is my attempt at documenting the API's endpoints.
-
 ## Endpoints
 - Check status
 - Count the number of comments
