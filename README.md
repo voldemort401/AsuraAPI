@@ -85,7 +85,7 @@ I discovered the official asurascans API that the website uses this is my attemp
       "surprised": integer,
       "upvote": integer
     },
-    "user_reaction": "love | funny | upvote | suprised | angry | sad" | null
+    "user_reaction": "love | funny | upvote | surprised | angry | sad" | null
   }
 }
 ```
