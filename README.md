@@ -439,7 +439,7 @@ limit = integer
 if q is not specified it will return the manhwas in order of how they appear in the websites "Latest Updates" section
 ```
 
-```
+```json
 // Response
 {
 	"data": [
@@ -458,7 +458,7 @@ if q is not specified it will return the manhwas in order of how they appear in 
 			"author": "string",
 			"artist": "string",
 			"popularity_rank": integer,
-			"bookmark_count": integer,
+			"bookmar_count": integer,
 			"rating": float,
 			"chapter_count": integer,
 			"last_chapter_at": "YYYY-MM-DDTHH:MM:SS.ffffffZ",
@@ -471,23 +471,43 @@ if q is not specified it will return the manhwas in order of how they appear in 
 					"id": id_of_the_genre_integer,
 					"name": "string",
 					"slug": "string"
-				}, // and so on for other genres
+				}, // and so on for other generes
 			],
 			"latest_chapters": [
 				{
 					"id": chapter_id,
 					"series_id": 0,
-					"number": chapter_number
+					"number": chapter_number,
+					"slug": "string",
+					"page_count": 0, // have only seen it return 0
+					"is_premium": true | false, 
+					"comments_enabled": true | false,
+					"published_at": "",
+					"view_count": integer,
+					"created_at": "0001-01-01T00:00:00Z"//always this for some reason
+					
 				},
 				{
 					"id": chapter_id,
 					"series_id": 0,
-					"number": chapter_number
+					"number": chapter_number,
+					"page_count": 0, // have only seen it return 0
+					"is_premium": true | false, 
+					"comments_enabled": true | false,
+					"published_at": "",
+					"view_count": integer,
+					"created_at": "0001-01-01T00:00:00Z"//always this for some reason
 				},
 				{
 					"id": chapter_id,
 					"series_id": 0,
-					"number": chapter_number
+					"number": chapter_number,
+					"page_count": 0, // have only seen it return 0
+					"is_premium": true | false, 
+					"comments_enabled": true | false,
+					"published_at": "",
+					"view_count": integer,
+					"created_at": "0001-01-01T00:00:00Z"//always this for some reason
 				}
 			]
 		}
