@@ -439,7 +439,7 @@ limit = integer
 if q is not specified it will return the manhwas in order of how they appear in the websites "Latest Updates" section
 ```
 
-```json
+```
 // Response
 {
 	"data": [
