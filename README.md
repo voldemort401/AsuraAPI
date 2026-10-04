@@ -292,7 +292,7 @@ I discovered the official asurascans API that the website uses this is my attemp
 
 ### Get user details
 - method: get
-- path:/api/user/username
+- path:/api/user/{username}
 
 ```
 {
@@ -450,7 +450,7 @@ if q is not specified it will return the manhwas in order of how they appear in 
 			"alt_titles": [
 				"This field wont exist if there is no alternative title"
 			], 
-			"description": "<p>desc</p>",
+			"description": "string", //Some entries are wrapped in <p>...</p>, while others may contain only a closing </p> tag or plain text.
 			"cover": "URL", 
 			"banner": "URL", 
 			"status": "ongoing | completed | hiatus | axed | dropped",
@@ -458,7 +458,7 @@ if q is not specified it will return the manhwas in order of how they appear in 
 			"author": "string",
 			"artist": "string",
 			"popularity_rank": integer,
-			"bookmar_count": integer,
+			"bookmark_count": integer,
 			"rating": float,
 			"chapter_count": integer,
 			"last_chapter_at": "YYYY-MM-DDTHH:MM:SS.ffffffZ",
@@ -476,7 +476,7 @@ if q is not specified it will return the manhwas in order of how they appear in 
 			"latest_chapters": [
 				{
 					"id": chapter_id,
-					"series_id": 0,
+					"series_id": 0, // appears to always return 0
 					"number": chapter_number,
 					"slug": "string",
 					"page_count": 0, // have only seen it return 0
