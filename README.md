@@ -347,7 +347,7 @@ I discovered the official asurascans API that the website uses this is my attemp
     "id": integer,
     "is_beta_user": true | false,
     "is_own_profile": true | false,
-    "karma": "all the aura since day 1",
+    "karma": "all the aura since day 1(integer)",
     "last_read": [
       {
         "chapter_number": integer,
@@ -376,7 +376,7 @@ I discovered the official asurascans API that the website uses this is my attemp
         "aura": integer
       }
     ],
-    "season_karma": "Current season aura dk why its called karma instead",
+    "season_karma": "Current season aura dk why its called karma instead(integer)",
     "total_activity": "amount of chapters read until 3 days ago(integer)",
     "total_bookmarks": integer,
     "username": "string"
