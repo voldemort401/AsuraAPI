@@ -11,6 +11,8 @@ I discovered the official asurascans API that the website uses this is my attemp
 - Get the emojis
 - Get user details
 - Get leaderboard
+- Get all the artist and authors that have their works on asura 
+- Search
 
 ### Check status
 - **Method** = `GET`
@@ -405,3 +407,200 @@ I discovered the official asurascans API that the website uses this is my attemp
 ```
 
 - It gives the top 100 users of the current season
+
+### Get all the artist and authors that have their works on asura
+- method: get
+- path: api/creators
+
+```
+//Response
+{
+	"data" : {
+		"artists": [
+			"artist1", "artist2", ...
+		],
+		"authors": [
+			"author1", "author2", ...
+		]
+	}
+}
+```
+
+### Search
+- method: get
+- path:api/search
+- #### Options
+
+```
+q = manhwa_name 
+limit = integer 
+
+
+if q is not specified it will return the manhwas in order of how they appear in the websites "Latest Updates" section
+```
+
+```
+// Response
+{
+	"data": [
+		{
+			"id": integer,
+			"slug": "string",
+			"title": "string",
+			"alt_titles": [
+				"This field wont exist if there is no alternative title"
+			], 
+			"description": "<p>desc</p>",
+			"cover": "URL", 
+			"banner": "URL", 
+			"status": "ongoing | completed | hiatus | axed | dropped",
+			"type": "ive seen manhua and manhwa",
+			"author": "string",
+			"artist": "string",
+			"popularity_rank": integer,
+			"bookmar_count": integer,
+			"rating": float,
+			"chapter_count": integer,
+			"last_chapter_at": "YYYY-MM-DDTHH:MM:SS.ffffffZ",
+			"created_at": "YYYY-MM-DDTHH:MM:SS.ffffffZ",
+			"updated_at": "YYYY-MM-DDTHH:MM:SS.ffffffZ",
+			"public_url": "/{type}/{title}",
+			"source_url": "/s/{id}",
+			"genres": [
+				{
+					"id": id_of_the_genre_integer,
+					"name": "string",
+					"slug": "string"
+				}, // and so on for other generes
+			],
+			"latest_chapters": [
+				{
+					"id": chapter_id,
+					"series_id": 0,
+					"number": chapter_number
+				},
+				{
+					"id": chapter_id,
+					"series_id": 0,
+					"number": chapter_number
+				},
+				{
+					"id": chapter_id,
+					"series_id": 0,
+					"number": chapter_number
+				}
+			]
+		}
+	],
+	"meta": {
+	    "total": integer,
+	    "per_page": integer // ive only seen this value be 20
+    }
+}
+```
+
+```
+// example
+╰─❯ curl 'https://api.asurascans.com/api/search?q=%20Rise%20of%20The%20Cheat%20User'
+{
+  "data": [
+    {
+      "id": 2092,
+      "slug": "rise-of-the-cheat-user",
+      "title": "Rise of The Cheat User",
+      "alt_titles": [
+        "大数据世界",
+        "万年を生きるチートゲーマー、嫁たちと異世界バトル",
+        "World of Data",
+        "Great Data World",
+        "Kai Gua Wanjia Cong 0 Shengji",
+        "开挂玩家从0升级"
+      ],
+      "description": "Sun Ran, who was born in a slum, was a master at cheating in games. Under the guise of a myriad of identities, he traversed carefree through countless virtual words. Unexpectedly, he was kicked out of the virtual worlds by an Enforcer, and found himself riddled with a hefty debt of 900 million in the real world. In order to pay off the debt, Sun Ran made a deal with the Central AI and became an Enforcer himself. Thus began his fierce battle against the 'Destroyers', players who cheated in their gameplay.",
+      "cover": "https://cdn.asurascans.com/asura-images/covers/rise-of-the-cheat-user.758744.webp",
+      "status": "dropped",
+      "type": "manhua",
+      "author": "Mo Xiang",
+      "artist": "Kuaikan",
+      "popularity_rank": 347,
+      "bookmark_count": 343,
+      "rating": 7.333333333333333,
+      "chapter_count": 21,
+      "last_chapter_at": "2023-01-24T23:32:31Z",
+      "created_at": "0001-01-01T00:00:00Z",
+      "updated_at": "2026-10-04T07:55:37.941347Z",
+      "public_url": "/comics/rise-of-the-cheat-user-3ec3b16f",
+      "source_url": "/s/2092",
+      "genres": [
+        {
+          "id": 1,
+          "name": "Action",
+          "slug": "action"
+        },
+        {
+          "id": 16,
+          "name": "Fantasy",
+          "slug": "fantasy"
+        },
+        {
+          "id": 18,
+          "name": "Game",
+          "slug": "game"
+        },
+        {
+          "id": 55,
+          "name": "Shounen",
+          "slug": "shounen"
+        },
+        {
+          "id": 63,
+          "name": "System",
+          "slug": "system"
+        }
+      ],
+      "latest_chapters": [
+        {
+          "id": 150689,
+          "series_id": 0,
+          "number": 21,
+          "slug": "c9c852ee-7617-44c2-964d-aa2b7f6ab1ee",
+          "page_count": 0,
+          "is_premium": false,
+          "comments_enabled": false,
+          "published_at": "2023-01-24T23:32:31Z",
+          "view_count": 0,
+          "created_at": "0001-01-01T00:00:00Z"
+        },
+        {
+          "id": 150688,
+          "series_id": 0,
+          "number": 20,
+          "slug": "0767c600-e85c-41cd-8fd3-e4c052c33420",
+          "page_count": 0,
+          "is_premium": false,
+          "comments_enabled": false,
+          "published_at": "2023-01-15T21:19:17Z",
+          "view_count": 0,
+          "created_at": "0001-01-01T00:00:00Z"
+        },
+        {
+          "id": 150687,
+          "series_id": 0,
+          "number": 19,
+          "slug": "d975ccd6-08ce-4097-9bcf-6815dcd5dc2f",
+          "page_count": 0,
+          "is_premium": false,
+          "comments_enabled": false,
+          "published_at": "2023-01-10T22:38:31Z",
+          "view_count": 0,
+          "created_at": "0001-01-01T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "per_page": 20
+  }
+}
+```
