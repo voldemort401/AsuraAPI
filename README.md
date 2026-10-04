@@ -57,7 +57,7 @@ I discovered the official asurascans API that the website uses this is my attemp
       "surprised": integer,
       "upvote": integer
     },
-    "user_reaction": "love | funny | upvote | suprised | angry | sad" | null
+    "user_reaction": "love | funny | upvote | surprised | angry | sad" | null
   }
 }
 ```
@@ -385,7 +385,7 @@ I discovered the official asurascans API that the website uses this is my attemp
 
 ```
 
-### Get Leader board
+### Get Leaderboard
 - method: get
 - path: api/leaderboard
 ```
@@ -458,7 +458,7 @@ if q is not specified it will return the manhwas in order of how they appear in 
 			"author": "string",
 			"artist": "string",
 			"popularity_rank": integer,
-			"bookmar_count": integer,
+			"bookmark_count": integer,
 			"rating": float,
 			"chapter_count": integer,
 			"last_chapter_at": "YYYY-MM-DDTHH:MM:SS.ffffffZ",
@@ -471,7 +471,7 @@ if q is not specified it will return the manhwas in order of how they appear in 
 					"id": id_of_the_genre_integer,
 					"name": "string",
 					"slug": "string"
-				}, // and so on for other generes
+				}, // and so on for other genres
 			],
 			"latest_chapters": [
 				{
